@@ -5,4 +5,4 @@
 
 */
 -- CreateIndex
-CREATE UNIQUE INDEX `config_name_key` ON `config`(`name`);
+CREATE UNIQUE INDEX "config_name_key" ON "config"("name");
