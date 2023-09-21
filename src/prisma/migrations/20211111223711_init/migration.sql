@@ -13,6 +13,13 @@ CREATE TABLE "character" (
 );
 
 -- CreateTable
+CREATE TABLE "attribute" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR(191) NOT NULL,
+    "description" VARCHAR(191)
+);
+
+-- CreateTable
 CREATE TABLE "character_attributes" (
     "character_id" INTEGER NOT NULL,
     "attribute_id" INTEGER NOT NULL,
@@ -20,13 +27,6 @@ CREATE TABLE "character_attributes" (
     PRIMARY KEY ("character_id", "attribute_id"),
     FOREIGN KEY ("character_id") REFERENCES "character"("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     FOREIGN KEY ("attribute_id") REFERENCES "attribute"("id") ON DELETE RESTRICT ON UPDATE CASCADE
-);
-
--- CreateTable
-CREATE TABLE "attribute" (
-    "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR(191) NOT NULL,
-    "description" VARCHAR(191)
 );
 
 -- CreateTable
